@@ -1,0 +1,13 @@
+.my-side-bar{
+    background-color: #009c96;
+}
+
+.my-list-group{
+    list-style: none;
+    font-size:large;
+    font-weight: bold;
+}
+
+.my-list-group-item{
+    cursor: pointer;
+}

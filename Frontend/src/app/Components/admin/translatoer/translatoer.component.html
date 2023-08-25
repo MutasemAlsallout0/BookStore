@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <h1 class="fs-5 ">ادارة المترجمون</h1>
+    <form [formGroup]="TranslatoerForm" (ngSubmit)="addTranslatoer()">
+        <p class="fs-6 text-center">اضافة المترجم جديد</p>
+        <div class="mb-3">
+            <label class="mb-2">اسم المترجم </label>
+            <input class="form-control" name="name" formControlName="name" type="text" />
+        </div>
+        <button class="btn btn-primary m-2" type="submit">اضافة</button>
+    </form>
+
+    <p class="fs-6 text-center"> جميع المترجمون</p>
+    <hr>
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th scope="col"> اسم المترجم </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let translatoer of translatoers; index as i">
+                <td>{{i+1}}</td>
+                <td>{{translatoer.name}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="onDelete(translatoer.id)">حذف</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" >تعديل</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    </div>

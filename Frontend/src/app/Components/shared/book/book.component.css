@@ -1,0 +1,19 @@
+a{
+    color: black;
+    text-decoration: none;
+}
+.bookImg{
+    height: 300px;
+    width: 200px;
+ 
+}
+p{
+    color: #717171;
+}
+.orignColor{
+    color: #8c8c8c;
+}
+.discount{
+    color: #153e67;
+    font-size: larger;
+}

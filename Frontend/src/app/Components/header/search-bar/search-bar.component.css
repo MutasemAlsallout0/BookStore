@@ -1,0 +1,20 @@
+button{
+    background-color: #009c96;
+    color: aliceblue;
+    border: none;
+    border-radius: 3px;
+
+}
+img{
+    height: 40px;
+    width: 100px;
+}
+input{
+    background-color: #e4e4e4;
+ }
+
+ .x{
+    width: auto;
+ }
+
+ 

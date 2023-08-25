@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+       
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active"  href="#">الصفحة الرئيسية</a>
+          <a class="nav-link"  [routerLink]="['/admin/category']">التصنيفات</a>
+          <a class="nav-link" [routerLink]="['/admin/auther']">المؤلفون</a>
+          <a class="nav-link" [routerLink]="['/admin/book']">الكتب</a>
+          <a class="nav-link" [routerLink]="['/admin/translatoer']" >المترجمون</a> 
+          <a class="nav-link" [routerLink]="['/admin/publishers']" >الناشرون</a>  
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,11 @@
+.parent{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.bottom-right{
+    position: absolute;
+    bottom: 250px;
+    left: 70px;
+    font-size:50px;
+}

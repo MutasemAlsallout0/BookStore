@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <h1 class="fs-5 ">ادارة المؤلفين</h1>
+    <form [formGroup]="AutherForm" (ngSubmit)="addAuther()">
+        <p class="fs-6 text-center">اضافة مؤلف جديد</p>
+        <div class="mb-3">
+            <label class="mb-2">اسم المؤلف </label>
+            <input class="form-control" name="name" formControlName="name" type="text" />
+        </div>
+        <button class="btn btn-primary m-2" type="submit">اضافة</button>
+    </form>
+
+    <p class="fs-6 text-center"> جميع المؤلفين</p>
+    <hr>
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th scope="col"> اسم المؤلف </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let auther of authers; index as i">
+                <td>{{i+1}}</td>
+                <td>{{auther.name}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="onDelete(auther.id)">حذف</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" >تعديل</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+

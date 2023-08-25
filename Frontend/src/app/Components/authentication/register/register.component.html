@@ -1,0 +1,151 @@
+ 
+
+  
+
+  <div class="container-fluid ps-md-0">
+    <div class="row g-0">
+      <div class="d-none d-md-flex col-md-4 bg-image">
+        <img src="../assets/icons/hero.png" alt="" width="align-items-center" height="align-items-center">
+      </div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto dd">
+                <h3 class="login-heading mb-4">              تسجيل مستخدم جديد
+                </h3>
+  
+                <div class="card-body">
+  
+                  <div *ngIf="showError" class="alert alert-danger" role="alert">
+                    <span [innerHTML]="errorMessage"></span>
+                  </div>
+        
+                  <form
+                    [formGroup]="registerForm"
+                    autocomplete="off"
+                    novalidate
+                    (ngSubmit)="registerUser()"
+                  >
+                    <div class="mb-3 row">
+                      <label for="firstName" class="col-form-label col-sm-3"
+                        >الاسم الاول:</label
+                      >
+                      <div class="col-md-5">
+                        <input
+                          type="text"
+                          id="firstName"
+                          formControlName="firstName"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="lastName" class="col-form-label col-sm-3"
+                        >الاسم الاخير:</label
+                      >
+                      <div class="col-md-5">
+                        <input
+                          type="text"
+                          id="lastName"
+                          formControlName="lastName"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="email" class="col-form-label col-sm-4">البريد الاكتروني:</label>
+                      <div class="col-md-5">
+                        <input
+                          type="email"
+                          id="email"
+                          formControlName="email"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-md-5">
+                        <em
+                          *ngIf="validateControl('email') && hasError('email', 'email')"
+                          >يرجى التاكد من صيغة البريد الاكتروني</em
+                        >
+                        <em
+                          *ngIf="
+                            validateControl('email') && hasError('email', 'required')
+                          "
+                          >البريد الاكتروني مطلوب</em
+                        >
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="password" class="col-form-label col-sm-3"
+                        >كملة المرور:</label
+                      >
+                      <div class="col-md-5">
+                        <input
+                          type="password"
+                          id="password"
+                          formControlName="password"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-md-5">
+                        <em
+                          *ngIf="
+                            validateControl('password') &&
+                            hasError('password', 'required')
+                          "
+                          >كلمة المرور مطلوبة</em
+                        >
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="confirm" class="col-form-label col-sm-4"
+                        >تاكيد كلمة المرور:</label
+                      >
+                      <div class="col-md-5">
+                        <input
+                          type="password"
+                          id="confirm"
+                          formControlName="confirm"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-md-5">
+                        <em
+                          *ngIf="
+                            validateControl('confirm') &&
+                            hasError('confirm', 'required')
+                          "
+                          >تاكيد كلمة المرور مطلوبة</em
+                        >
+                        <em *ngIf="hasError('confirm', 'mustMatch')"
+                          >كلمة المرور والتاكيد غير متطابقان</em
+                        >
+                      </div>
+                    </div>
+                    <br />
+                    <div class="mb-3 row">
+                      <div class="col-md-1">
+                        <button
+                          type="submit"
+                          class="btn btn-primary"
+                          [disabled]="!registerForm.valid"
+                        >
+                          التسجيل
+                        </button>
+                      </div>
+                      <div class="text-center">
+                        <a class="small forget" [routerLink]="['/login']" >      هل لديك حساب؟</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                 
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

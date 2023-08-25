@@ -1,0 +1,91 @@
+
+
+  <div class="container-fluid ps-md-0">
+    <div class="row g-0">
+      <div class="d-none d-md-flex col-md-4 bg-image">
+        <img src="../assets/icons/hero.png" alt="" width="align-items-center" height="align-items-center">
+      </div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto dd">
+                <h3 class="login-heading mb-4">مرحبا بك !</h3>
+  
+                <!-- Sign In Form -->
+                <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                  <div class="form-floating mb-3">
+                     <div class="col-md-5">
+                      <input
+                        type="email"
+                        id="email"
+                        formControlName="email"
+                        class="form-control"
+                        placeholder="الايميل"
+                      />
+                    </div>
+                    <div class="invalid-feedback">
+                      <em
+                        *ngIf="
+                          validateControl('email') && hasError('email', 'required')
+                        "
+                        >حقل الايميل مطلوب</em
+                      >
+                      <em
+                        *ngIf="validateControl('email') && hasError('email', 'email')"
+                        >صيفة البريد الاكتروني غير صحيحة</em
+                      >
+                    </div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <div class="col-md-5">
+                      <input
+                        type="password"
+                        id="password"
+                        formControlName="password"
+                        class="form-control"
+                        placeholder="كلمة المرور"
+                      />
+                    </div>
+                    <div class="col-md-5">
+                      <em
+                        *ngIf="
+                          validateControl('password') &&
+                          hasError('password', 'required')
+                        "
+                        >كلمة المرور مطلوبة</em
+                      >
+                    </div>
+                  </div>
+              
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                    <label class="form-check-label" for="rememberPasswordCheck">
+                     تذكر كلمة المرور
+                    </label>
+                  </div>
+  
+                  <div class="d-grid">
+                    <button
+                    type="submit"
+                    class="btn btn-lg btn-login text-uppercase fw-bold mb-2"
+                    [disabled]="!loginForm.valid"
+                  >
+                    تسجيل الدخول
+                  </button>
+                    <div class="text-center">
+                      <a class="small forget" href="#" >نسيت كلمة المرور؟</a>
+                    </div>
+                    <div class="text-center">
+                      <a class="small forget" [routerLink]="['/register']" >انشاء حساب جديد</a>
+                    </div>
+                  </div>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
